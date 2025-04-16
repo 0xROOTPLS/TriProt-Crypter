@@ -1,4 +1,4 @@
-# Final Version - PE Protector Script (No XOR, Fixed Output Name)
+# Final Version
 
 import subprocess
 import os
