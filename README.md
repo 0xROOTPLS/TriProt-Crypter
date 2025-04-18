@@ -1,17 +1,17 @@
-# TRIPROT Protector
+# TRIPROT Protector ≽^•⩊•^≼
 
 TRIPROT transforms Windows x64 executables through a systematic protection pipeline:
 
 1. **Shellcode Conversion** - Transforms input PE into position-independent shellcode using Donut
-2. **Encryption Layer** - Applies SGN encoding to obfuscate the payload polymorphically
-3. **Custom Loader** - Generates a C++ stub with a randomized executable section name
-4. **Compilation** - Compiles the protected executable with LTCG
+   - *Xpress Compression + Symmetric Encryption applied during this step*
+3. **Polymorphic Encoding Layer** - Applies SGN encoding to obfuscate the payload polymorphically
+4. **Custom Shellcode Loader** - Generates a C++ stub with a randomized executable section name
+   - *This section is marked X (to avoid requesting executable memory permissions during runtime)*
+5. **Compilation** - Compiles the protected executable with LTCG
 
-## Features
+## Features?
 
-- Creates a randomly-named RWX section to store the encoded payload
-- Executes the payload indirectly through DbgHelp API callbacks
-- Completely eliminates the original PE structure and import table
+- Not much, it just takes an input and then protects your files from 🔍.
 
 ## Usage
 
