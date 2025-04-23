@@ -11,7 +11,8 @@ TRIPROT transforms Windows x64 executables through a systematic protection pipel
 
 ## Features?
 
-- Not much, it just takes an input and then protects your files from 🔍.
+- Not much, it just takes an input and then protects your files from AV.
+- The three different py scripts operate the same, but offer different execution methods.
 
 ## Usage
 
