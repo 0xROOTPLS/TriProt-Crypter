@@ -1,4 +1,3 @@
-# --- START OF FILE TriProt.py ---
 import subprocess
 import os
 import sys
@@ -12,7 +11,7 @@ import shutil
 import math
 from colorama import init, Fore, Style
 import secrets
-import struct # Needed for checksum calculation
+import struct
 try:
     import pefile
 except ImportError:
@@ -178,11 +177,11 @@ def calculate_xor_checksum(payload_data):
     remaining_bytes = len(payload_data) % 4
     if remaining_bytes > 0:
         last_chunk_data = payload_data[len(payload_data) - remaining_bytes:]
-        # Pad with zeros to make 4 bytes for consistent unpacking
+        # Pad with zeros
         last_chunk_data += b'\x00' * (4 - remaining_bytes)
         last_chunk, = struct.unpack('<I', last_chunk_data)
         checksum ^= last_chunk
-    # Ensure it fits in 32 bits (though XOR naturally does this)
+    # Ensure it fits in 32 bits
     return checksum & 0xFFFFFFFF
 def patch_pe_header(filepath):
     pi("Stage 5: Patching PE Header...")
@@ -461,4 +460,3 @@ if __name__ == "__main__":
     except SystemExit as e: stsp(); sys.exit(e.code)
     except Exception as e: stsp(); pe(f"Unhandled exception caught at top level: {e}"); import traceback; traceback.print_exc(); sys.exit(99)
     finally: stsp()
-# --- END OF FILE TriProt.py ---
