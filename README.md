@@ -14,14 +14,14 @@ TRIPROT transforms Windows x64 executables through a systematic protection pipel
 - Uses EnumMetaFile callback for shellcode execution. I've found reference to this is literature but never a PoC
 - Data validation of payload (will not execute if payload has been modified)
 - Customizable args for use across different environments
-- x64 Onlu
+- x64 Only
 
 ## Usage
 
 ```bash
 python triprot.py -i "input.exe" -o "protected.exe"
 ```
-Please launch form a x64 msvc developer cmd so it may have access to cl.
+Please launch form a x64 msvc developer cmd so it may have access to CL.
 
 ### Command Line Options
 
